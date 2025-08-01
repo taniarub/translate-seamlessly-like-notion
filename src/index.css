@@ -16,6 +16,7 @@
     --text-muted: 0 0% 65%;
     
     /* Clean borders and separators */
+    --border: 0 0% 90%;
     --border-light: 0 0% 93%;
     --border-subtle: 0 0% 90%;
     

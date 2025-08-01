@@ -24,6 +24,7 @@ export default {
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				border: 'hsl(var(--border))',
 				'text-primary': 'hsl(var(--text-primary))',
 				'text-secondary': 'hsl(var(--text-secondary))',
 				'text-muted': 'hsl(var(--text-muted))',
@@ -42,7 +43,31 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					hover: 'hsl(var(--card-hover))'
+					hover: 'hsl(var(--card-hover))',
+					foreground: 'hsl(var(--foreground))'
+				},
+				// Legacy shadcn colors for compatibility
+				input: 'hsl(var(--border))',
+				ring: 'hsl(var(--primary))',
+				destructive: {
+					DEFAULT: 'hsl(0 84.2% 60.2%)',
+					foreground: 'hsl(var(--primary-foreground))'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--border-light))',
+					foreground: 'hsl(var(--text-secondary))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--border-light))',
+					foreground: 'hsl(var(--text-primary))'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--background))',
+					foreground: 'hsl(var(--foreground))'
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--button-secondary))',
+					foreground: 'hsl(var(--text-primary))'
 				},
 			},
 			spacing: {
