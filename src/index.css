@@ -6,30 +6,30 @@
 
 @layer base {
   :root {
-    /* Notion-style color palette */
+    /* Notion exact color palette */
     --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    --foreground: 37 10% 14%;
     
-    /* Subtle grays matching Notion's palette */
-    --text-primary: 0 0% 9%;
-    --text-secondary: 0 0% 45%;
-    --text-muted: 0 0% 65%;
+    /* Notion's exact grays */
+    --text-primary: 37 10% 14%;
+    --text-secondary: 20 6% 42%;
+    --text-muted: 0 0% 60%;
     
-    /* Clean borders and separators */
+    /* Notion's exact borders */
     --border: 0 0% 90%;
-    --border-light: 0 0% 93%;
-    --border-subtle: 0 0% 90%;
+    --border-light: 0 0% 94%;
+    --border-subtle: 0 0% 92%;
     
-    /* Interactive elements - Notion's blue primary */
-    --primary: 217 87% 54%;
+    /* Notion's exact blue - #0f82ff */
+    --primary: 207 100% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 87% 46%;
+    --primary-hover: 207 100% 47%;
     
-    /* Notion's signature button style - blue primary, light secondary */
-    --button-primary: 217 87% 54%;
-    --button-primary-hover: 217 87% 46%;
+    /* Notion's exact button colors */
+    --button-primary: 207 100% 53%;
+    --button-primary-hover: 207 100% 47%;
     --button-secondary: 0 0% 97%;
-    --button-secondary-hover: 0 0% 94%;
+    --button-secondary-hover: 0 0% 93%;
     
     /* Card and surface colors */
     --card: 0 0% 100%;
