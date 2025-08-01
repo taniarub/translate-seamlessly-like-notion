@@ -17,7 +17,7 @@ const buttonVariants = cva(
         ghost: "text-text-secondary hover:text-text-primary hover:bg-card-hover",
         link: "text-text-primary hover:text-text-secondary underline-offset-4 hover:underline p-0 h-auto",
         // Notion-style variants
-        primary: "bg-button-primary text-primary-foreground hover:bg-button-primary-hover shadow-sm",
+        primary: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm",
       },
       size: {
         sm: "text-notion-sm h-8 px-3",
