@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import TrustedBySection from "@/components/TrustedBySection";
-import BentoSection from "@/components/BentoSection";
+import FeatureCards from "@/components/FeatureCards";
+import DescriptionSection from "@/components/DescriptionSection";
 import FeatureSection from "@/components/FeatureSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialSection from "@/components/TestimonialSection";
@@ -13,8 +13,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <TrustedBySection />
-      <BentoSection />
+      <FeatureCards />
+      <DescriptionSection />
       <FeatureSection />
       <AboutSection />
       <TestimonialSection />

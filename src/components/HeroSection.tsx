@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="container mx-auto text-center">
         <div className="flex justify-center mb-8">
           <img 
-            src="/lovable-uploads/fdd005b2-ebc6-4e06-9563-bf93048276a9.png" 
+            src="/lovable-uploads/Logo.jpg" 
             alt="AnyTranslator" 
             className="h-16 w-16"
           />
