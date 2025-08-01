@@ -12,56 +12,55 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1.5rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1200px'
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+			},
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-muted': 'hsl(var(--text-muted))',
+				'border-light': 'hsl(var(--border-light))',
+				'border-subtle': 'hsl(var(--border-subtle))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+				button: {
+					primary: 'hsl(var(--button-primary))',
+					'primary-hover': 'hsl(var(--button-primary-hover))',
+					secondary: 'hsl(var(--button-secondary))',
+					'secondary-hover': 'hsl(var(--button-secondary-hover))'
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					hover: 'hsl(var(--card-hover))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+			},
+			spacing: {
+				'xs': 'var(--spacing-xs)',
+				'sm': 'var(--spacing-sm)',
+				'md': 'var(--spacing-md)',
+				'lg': 'var(--spacing-lg)',
+				'xl': 'var(--spacing-xl)',
+				'2xl': 'var(--spacing-2xl)',
+			},
+			fontSize: {
+				'notion-sm': ['var(--font-size-sm)', { lineHeight: 'var(--line-height-relaxed)' }],
+				'notion-base': ['var(--font-size-base)', { lineHeight: 'var(--line-height-loose)' }],
+				'notion-lg': ['var(--font-size-lg)', { lineHeight: 'var(--line-height-loose)' }],
+				'notion-xl': ['var(--font-size-xl)', { lineHeight: 'var(--line-height-relaxed)' }],
+				'notion-2xl': ['var(--font-size-2xl)', { lineHeight: 'var(--line-height-relaxed)' }],
+				'notion-3xl': ['var(--font-size-3xl)', { lineHeight: 'var(--line-height-relaxed)' }],
+				'notion-4xl': ['var(--font-size-4xl)', { lineHeight: 'var(--line-height-relaxed)' }],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
