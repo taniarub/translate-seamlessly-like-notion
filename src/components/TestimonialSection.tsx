@@ -75,17 +75,14 @@ const TestimonialSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-50">
+    <section className="py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Customer stories
+          <div className="mb-16">
+            <h2 className="text-lg font-normal text-gray-600 mb-6">
+              💬 Customer stories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how teams around the world use AnyTranslator to break down language barriers
-            </p>
           </div>
 
                     {/* Desktop Carousel View */}
