@@ -4,83 +4,83 @@ export const translations = {
   'nav.openApp': 'Открыть приложение',
   
   // Hero Section
-  'hero.title.part1': 'ИИ переводчик,',
-  'hero.title.part2': 'который работает для вас.',
-  'hero.subtitle': 'Единое место, где команды находят любые ответы, автоматизируют рутину и выполняют переводы.',
-  'hero.ctaButton': 'Получить AnyTranslator бесплатно',
+  'hero.title.part1': 'Any Translator',
+  'hero.title.part2': 'Ваш интеллектуальный помощник для перевода',
+  'hero.subtitle': 'Ваш мобильный интеллектуальный помощник для перевода, оснащенный универсальными функциями для полноценного межъязыкового взаимодействия.',
+  'hero.ctaButton': 'Получить Any Translator бесплатно',
   'hero.iosOnly': 'Пока только для iOS. Мы работаем над версиями для Android и других платформ.',
   
   // Description Section
-  'description.title.part1': 'AnyTranslator',
+  'description.title.part1': 'Any Translator',
   'description.title.part2': 'больше чем просто перевод',
-  'description.text1': 'Это не замена слов — это понимание смысла.',
-  'description.text2': 'Идеально для повседневного общения, изучения или профессионального использования.',
+  'description.text1': 'Это не замена слов — это понимание смысла и преодоление языковых барьеров.',
+  'description.text2': 'Идеально для повседневного общения, изучения, профессионального использования и путешествий.',
   
   // Feature Cards
-  'features.aiTranslation.title': 'Идеальные переводы каждый раз.',
-  'features.aiTranslation.description': 'Передовой ИИ понимает контекст, идиомы и культурные нюансы для естественных переводов.',
-  'features.aiTranslation.tag': 'ИИ Перевод',
+  'features.aiTranslation.title': 'Точный перевод',
+  'features.aiTranslation.description': 'Поддерживает 100+ языков, включая редкие диалекты с профессиональными, аутентичными результатами.',
+  'features.aiTranslation.tag': 'Точный перевод',
   
-  'features.aiLearning.title': 'ИИ разговорное обучение',
-  'features.aiLearning.description': 'ИИ изучает грамматику и сценарии разговоров для более легкого обучения!',
+  'features.aiLearning.title': 'Интерактивное обучение с ИИ',
+  'features.aiLearning.description': 'Создавайте собственные списки слов и практикуйте ситуационные диалоги. Ваш личный языковой тренер помогает естественно усваивать грамматику и идиомы.',
   'features.aiLearning.tag': 'ИИ Обучение',
   
-  'features.customizedKnowledge.title': 'Персонализированные знания',
-  'features.customizedKnowledge.description': 'Улучшите свои переводы с помощью контекстно-зависимого расширения знаний, адаптированного к вашей конкретной области и потребностям.',
-  'features.customizedKnowledge.tag': 'Персонализированные знания',
+  'features.customizedKnowledge.title': 'Мгновенный перевод с клавиатуры',
+  'features.customizedKnowledge.description': 'Переводите по мере ввода без переключения интерфейсов. Безупречно работает в WhatsApp, Instagram, Messenger, Telegram и других приложениях.',
+  'features.customizedKnowledge.tag': 'Перевод с клавиатуры',
   
-  'features.voiceTranslation.title': 'Мгновенный голосовой перевод',
-  'features.voiceTranslation.description': 'Мгновенно преодолевайте языковые барьеры с живым голосовым переводом, который работает во всех ваших разговорах.',
-  'features.voiceTranslation.tag': 'Мгновенный голосовой перевод',
+  'features.voiceTranslation.title': 'Перевод голоса в реальном времени',
+  'features.voiceTranslation.description': 'Живая транскрипция и двуязычные субтитры для встреч, экскурсий и заказа еды, устраняя все языковые препятствия.',
+  'features.voiceTranslation.tag': 'Голосовой перевод',
   
-  'features.aiImageInteraction.title': 'ИИ взаимодействие с изображениями',
-  'features.aiImageInteraction.description': 'Загружайте изображения для прямого общения с ИИ и получения ответов или переводов.',
-  'features.aiImageInteraction.tag': 'ИИ чат с изображениями',
+  'features.aiImageInteraction.title': 'Инструмент перевода фото',
+  'features.aiImageInteraction.description': 'Нажмите на текст в красной рамке для распознавания и перевода за секунды - идеально для меню, уведомлений, инструкций и контрактов.',
+  'features.aiImageInteraction.tag': 'Перевод фото',
   
-  'features.photoTranslation.title': 'Инструмент перевода фото',
-  'features.photoTranslation.description': 'Прекрасно распознаёт картинки, фото, конспекты, контракты.',
-  'features.photoTranslation.tag': 'Перевод фото',
+  'features.photoTranslation.title': 'ИИ взаимодействие с изображениями',
+  'features.photoTranslation.description': 'Загружайте изображения для прямого общения с ИИ и получения ответов или переводов.',
+  'features.photoTranslation.tag': 'ИИ чат с изображениями',
   
   'features.tryIt': 'Попробовать',
   
   // About Section
   'about.title': 'Идеально для повседневного общения, изучения или профессионального использования.',
-  'about.text1': 'Путешествуете ли вы, изучаете новый язык или работаете с международными командами, AnyTranslator адаптируется к вашим потребностям.',
+  'about.text1': 'Путешествуете ли вы, изучаете новый язык или работаете с международными командами, Any Translator адаптируется к вашим потребностям.',
   'about.text2': 'Наш ИИ понимает контекст, идиомы и культурные нюансы, чтобы предоставлять переводы, которые звучат естественно и точно.',
   
   // Testimonials
   'testimonials.title': 'Что говорят наши пользователи',
-  'testimonials.user1.text': 'AnyTranslator революционизировал мое общение с международными клиентами. Точность невероятная!',
+  'testimonials.user1.text': 'Any Translator революционизировал мое общение с международными клиентами. Функция перевода с клавиатуры работает безупречно во всех моих мессенджерах!',
   'testimonials.user1.name': 'Сара Чен',
   'testimonials.user1.title': 'Бизнес-консультант',
   
-  'testimonials.user2.text': 'Как студент-лингвист, функция обучения диалогам помогает мне практиковать разговоры естественно.',
+  'testimonials.user2.text': 'Как студент-лингвист, функция интерактивного обучения с ИИ помогает мне естественно практиковать разговоры и создавать собственные списки слов.',
   'testimonials.user2.name': 'Мигель Родригес',
   'testimonials.user2.title': 'Студент-лингвист',
   
-  'testimonials.user3.text': 'Функция перевода фото - это прорыв в путешествиях. Я могу понять любой знак или меню мгновенно.',
+  'testimonials.user3.text': 'Инструмент перевода фото - это прорыв в путешествиях. Я могу понять любое меню, знак или документ мгновенно.',
   'testimonials.user3.name': 'Эмма Томпсон',
   'testimonials.user3.title': 'Тревел-блогер',
   
   // Feature Section  
-  'featureSection.feature1.title': 'Переводите по мере ввода — мгновенно',
-  'featureSection.feature1.description': 'Пишете ли вы сообщения, электронные письма или создаете подписи,\nAnyTranslator переводит ваш текст на лету на любой нужный язык. Быстро, легко и без усилий.',
+  'featureSection.feature1.title': 'Мгновенный перевод с клавиатуры',
+  'featureSection.feature1.description': 'Переводите по мере ввода без переключения интерфейсов. Безупречно работает в WhatsApp, Instagram, Messenger, Telegram и других приложениях.',
   
-  'featureSection.feature2.title': 'Изучайте языки умнее с ИИ',
-  'featureSection.feature2.description': 'Обучение на основе ИИ, которое адаптируется к вам.\nСоздавайте персонализированные списки слов, осваивайте грамматику и запоминайте то, что действительно важно.',
+  'featureSection.feature2.title': 'Интерактивное обучение с ИИ',
+  'featureSection.feature2.description': 'Создавайте собственные списки слов и практикуйте ситуационные диалоги. Ваш личный языковой тренер помогает естественно усваивать грамматику и идиомы.',
   
-  'featureSection.feature3.title': 'Говорите на любом языке',
-  'featureSection.feature3.description': 'Поддерживает более 50 языков, включая корейский, японский, русский, арабский, турецкий и даже суахили.',
+  'featureSection.feature3.title': 'Точный перевод',
+  'featureSection.feature3.description': 'Поддерживает 100+ языков, включая редкие диалекты - китайский, английский, японский, корейский, французский, немецкий, русский и другие - с профессиональными, аутентичными результатами.',
   
-  'featureSection.feature4.title': 'Больше чем слова: умный перевод',
-  'featureSection.feature4.description': 'AnyTranslator обрабатывает сложную грамматику, идиомы и реальный контекст, используя мощный ИИ.',
+  'featureSection.feature4.title': 'Перевод голоса в реальном времени',
+  'featureSection.feature4.description': 'Живая транскрипция и двуязычные субтитры для встреч, экскурсий и заказа еды, устраняя все языковые препятствия.',
 
   // Download Section
   'download.badge': 'Бесплатно и эффективно',
   'download.title.part1': 'Готовы сломать',
   'download.title.part2': 'языковые барьеры?',
   'download.description': 'Скачайте сейчас и наслаждайтесь полным доступом бесплатно.',
-  'download.title': 'Скачать AnyTranslator',
+  'download.title': 'Скачать Any Translator',
   'download.subtitle': 'Доступно на всех ваших устройствах',
   'download.appStore': 'Скачать в App Store',
   
@@ -91,7 +91,7 @@ export const translations = {
   'testimonials.stats.community': 'участников сообщества',
   
   // Footer
-  'footer.description': 'Ваш умный помощник для мгновенных, точных переводов на 50+ языках.',
+  'footer.description': 'Ваш умный помощник для мгновенных, точных переводов на 100+ языках.',
   'footer.features': 'Функции',
   'footer.feature1': 'Перевод текста',
   'footer.feature2': 'Голосовой перевод',
@@ -105,9 +105,9 @@ export const translations = {
   'footer.support': 'Поддержка',
   'footer.faq': 'FAQ',
   'footer.help': 'Справочный центр',
-  'footer.copyright': '© 2024 AnyTranslator. Все права защищены.',
+  'footer.copyright': '© 2024 Any Translator. Все права защищены.',
   
   // Meta
-  'meta.title': 'AnyTranslator - Умное приложение для перевода',
-  'meta.description': 'Ваш умный помощник для мгновенных, точных переводов на 50+ языках'
+  'meta.title': 'Any Translator - Умное приложение для перевода',
+  'meta.description': 'Ваш умный помощник для мгновенных, точных переводов на 100+ языках'
 };
