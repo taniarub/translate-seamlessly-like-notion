@@ -6,7 +6,7 @@ export const translations = {
   // Hero Section
   'hero.title.part1': 'Le traducteur IA',
   'hero.title.part2': 'qui fonctionne pour vous.',
-  'hero.subtitle': 'Un endroit où les équipes trouvent toutes les réponses, automatisent les tâches routinières et réalisent des traductions.',
+  'hero.subtitle': 'Votre assistant de traduction intelligent mobile, équipé de fonctionnalités polyvalentes pour une expérience interlangue complète.',
   'hero.ctaButton': 'Obtenir AnyTranslator gratuitement',
   'hero.iosOnly': 'Actuellement sur iOS — Android et d\'autres plateformes arrivent bientôt !',
   

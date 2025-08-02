@@ -6,7 +6,7 @@ export const translations = {
   // Hero Section
   'hero.title.part1': 'AI-översättaren',
   'hero.title.part2': 'som arbetar för dig.',
-  'hero.subtitle': 'En plats där team hittar alla svar, automatiserar rutinarbete och får översättningar klara.',
+  'hero.subtitle': 'Din mobila intelligenta översättningsassistent, utrustad med mångsidiga funktioner för en komplett språkövergripande upplevelse.',
   'hero.ctaButton': 'Få AnyTranslator gratis',
   'hero.iosOnly': 'För närvarande på iOS — Android och fler plattformar kommer snart!',
   
@@ -105,7 +105,7 @@ export const translations = {
   'footer.support': 'Support',
   'footer.faq': 'FAQ',
   'footer.help': 'Hjälpcenter',
-  'footer.copyright': '© 2024 AnyTranslator. Alla rättigheter förbehålls.',
+  'footer.copyright': '© 2024 AnyTranslator. Alla rättigheter förbehållna.',
   
   // Meta
   'meta.title': 'AnyTranslator - Smart översättningsapp',

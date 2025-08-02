@@ -4,17 +4,17 @@ export const translations = {
   'nav.openApp': 'Åbn app',
   
   // Hero Section
-  'hero.title.part1': 'AI-oversætteren,',
+  'hero.title.part1': 'AI-oversætteren',
   'hero.title.part2': 'der arbejder for dig.',
-  'hero.subtitle': 'Ét sted hvor teams finder alle svar, automatiserer rutinearbejde og får oversættelser færdige.',
+  'hero.subtitle': 'Din mobile intelligente oversættelsesassistent, udstyret med alsidige funktioner for en komplet sprogoplevelse.',
   'hero.ctaButton': 'Få AnyTranslator gratis',
   'hero.iosOnly': 'For tiden på iOS — Android og flere platforme er på vej!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',
-  'description.title.part2': 'mere end blot oversættelse',
-  'description.text1': 'Det handler ikke om at udskifte ord — det handler om at forstå betydning.',
-  'description.text2': 'Perfekt til hverdagssamtaler, studier eller professionel brug.',
+  'description.title.part2': 'mere end bare oversættelse',
+  'description.text1': 'Det handler ikke om at bytte ord — det handler om at forstå mening.',
+  'description.text2': 'Perfekt til hverdagsamtaler, studier eller professionel brug.',
   
   // Feature Cards
   'features.aiTranslation.title': 'Perfekte oversættelser hver gang.',
@@ -22,15 +22,15 @@ export const translations = {
   'features.aiTranslation.tag': 'AI-oversættelse',
   
   'features.aiLearning.title': 'AI-samtaleindlæring',
-  'features.aiLearning.description': 'AI lærer grammatik og samtalescenarjer for lettere læring!',
-  'features.aiLearning.tag': 'AI-læring',
+  'features.aiLearning.description': 'AI lærer grammatik og samtalescenarier for nemmere indlæring!',
+  'features.aiLearning.tag': 'AI-indlæring',
   
   'features.customizedKnowledge.title': 'Tilpasset viden',
-  'features.customizedKnowledge.description': 'Forbedr dine oversættelser med kontekstbevidst vidensudvidelse, der tilpasser sig dit specifikke domæne og krav.',
+  'features.customizedKnowledge.description': 'Forbedre dine oversættelser med kontekstbevidst vidensudvidelse, der tilpasser sig til dit specifikke domæne og krav.',
   'features.customizedKnowledge.tag': 'Tilpasset viden',
   
   'features.voiceTranslation.title': 'Øjeblikkelig stemmeoversættelse',
-  'features.voiceTranslation.description': 'Bryd sprogbarrierer øjeblikkeligt med live stemmeoversættelse, der virker på tværs af alle dine samtaler.',
+  'features.voiceTranslation.description': 'Bryd sprogbarrierer øjeblikkeligt med live stemmeoversættelse, der fungerer i alle dine samtaler.',
   'features.voiceTranslation.tag': 'Øjeblikkelig stemmeoversættelse',
   
   'features.aiImageInteraction.title': 'AI-billedinteraktion',
@@ -45,20 +45,20 @@ export const translations = {
   
   // Feature Section  
   'featureSection.feature1.title': 'Oversæt mens du skriver — Øjeblikkeligt',
-  'featureSection.feature1.description': 'Uanset om du sender beskeder, skriver e-mails eller laver billedtekster,\noversætter AnyTranslator din tekst på farten til hvilket som helst sprog, du har brug for. Hurtigt, problemfrit og ubesværet.',
+  'featureSection.feature1.description': 'Uanset om du sender beskeder, skriver e-mails eller opretter billedtekster,\noversætter AnyTranslator din tekst på stedet til det sprog, du har brug for. Hurtigt, sømløst og uden anstrengelse.',
   
   'featureSection.feature2.title': 'Lær sprog smartere med AI',
-  'featureSection.feature2.description': 'AI-drevet træning, der tilpasser sig dig.\nOpret personaliserede ordlister, mestre grammatik og husk det, der virkelig betyder noget.',
+  'featureSection.feature2.description': 'AI-drevet træning, der tilpasser sig til dig.\nOpret personlige ordlister, mester grammatik og husk det, der virkelig betyder noget.',
   
   'featureSection.feature3.title': 'Tal ethvert sprog',
   'featureSection.feature3.description': 'Understøtter 50+ sprog, herunder koreansk, japansk, russisk, arabisk, tyrkisk og endda swahili.',
   
-  'featureSection.feature4.title': 'Ud over ord: Smartere oversættelse',
-  'featureSection.feature4.description': 'AnyTranslator håndterer vanskelig grammatik, idiomer og virkeligheds kontekst ved hjælp af kraftfuld AI.',
+  'featureSection.feature4.title': 'Uden for ord: Smartere oversættelse',
+  'featureSection.feature4.description': 'AnyTranslator håndterer vanskelig grammatik, idiomer og virkelighedskontekst med kraftig AI.',
 
   // About Section
-  'about.title': 'Perfekt til hverdagssamtaler, studier eller professionel brug.',
-  'about.text1': 'Uanset om du rejser, lærer et nyt sprog eller arbejder med internationale teams, tilpasser AnyTranslator sig dine behov.',
+  'about.title': 'Perfekt til hverdagsamtaler, studier eller professionel brug.',
+  'about.text1': 'Uanset om du rejser, lærer et nyt sprog eller arbejder med internationale teams, tilpasser AnyTranslator sig til dine behov.',
   'about.text2': 'Vores AI forstår kontekst, idiomer og kulturelle nuancer for at levere oversættelser, der føles naturlige og nøjagtige.',
   
   // Testimonials
@@ -67,11 +67,11 @@ export const translations = {
   'testimonials.user1.name': 'Sarah Chen',
   'testimonials.user1.title': 'Forretningskonsulent',
   
-  'testimonials.user2.text': 'Som sprogstuderende hjælper dialoglæringsfunktionen mig med at øve samtaler naturligt.',
+  'testimonials.user2.text': 'Som sprogstudent hjælper dialoglæringsfunktionen mig med at øve samtaler naturligt.',
   'testimonials.user2.name': 'Miguel Rodriguez',
-  'testimonials.user2.title': 'Sprogstuderende',
+  'testimonials.user2.title': 'Sprogstudent',
   
-  'testimonials.user3.text': 'Fotooversættelsesfunktionen er en game-changer på rejser. Jeg kan forstå ethvert skilt eller menu øjeblikkeligt.',
+  'testimonials.user3.text': 'Fotooversættelsesfunktionen er en game-changer, når jeg rejser. Jeg kan forstå ethvert skilt eller menu øjeblikkeligt.',
   'testimonials.user3.name': 'Emma Thompson',
   'testimonials.user3.title': 'Rejseblogger',
 
@@ -85,22 +85,22 @@ export const translations = {
   'download.appStore': 'Download på App Store',
   
   // Testimonials Stats
-  'testimonials.stats.users': 'brugere verden over',
+  'testimonials.stats.users': 'brugere over hele verden',
   'testimonials.stats.aiTranslation': 'AI-oversættelse (G2)', 
-  'testimonials.stats.languages': 'understøttede sprog',
-  'testimonials.stats.community': 'fællesskabsmedlemmer',
+  'testimonials.stats.languages': 'sprog der understøttes',
+  'testimonials.stats.community': 'samfundsmedlemmer',
   
   // Footer
-  'footer.description': 'Din smarte ledsager til øjeblikkelige, nøjagtige oversættelser på 50+ sprog.',
+  'footer.description': 'Din smarte følgesvend til øjeblikkelige, nøjagtige oversættelser på 50+ sprog.',
   'footer.features': 'Funktioner',
   'footer.feature1': 'Tekstoversættelse',
   'footer.feature2': 'Stemmeoversættelse',
   'footer.feature3': 'Fotooversættelse',
-  'footer.feature4': 'AI-læring',
+  'footer.feature4': 'AI-indlæring',
   'footer.company': 'Virksomhed',
   'footer.about': 'Om',
   'footer.privacy': 'Privatlivspolitik',
-  'footer.terms': 'Servicevilkår',
+  'footer.terms': 'Brugervilkår',
   'footer.contact': 'Kontakt',
   'footer.support': 'Support',
   'footer.faq': 'FAQ',
@@ -109,5 +109,5 @@ export const translations = {
   
   // Meta
   'meta.title': 'AnyTranslator - Smart oversættelsesapp',
-  'meta.description': 'Din smarte ledsager til øjeblikkelige, nøjagtige oversættelser på 50+ sprog'
+  'meta.description': 'Din smarte følgesvend til øjeblikkelige, nøjagtige oversættelser på 50+ sprog'
 };

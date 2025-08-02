@@ -1,12 +1,12 @@
 export const translations = {
   // Navigation
   'nav.language': 'Lingua',
-  'nav.openApp': 'Apri App',
+  'nav.openApp': 'Apri app',
   
   // Hero Section
-  'hero.title.part1': 'Il traduttore AI',
+  'hero.title.part1': 'Il traduttore IA',
   'hero.title.part2': 'che lavora per te.',
-  'hero.subtitle': 'Un posto dove i team trovano ogni risposta, automatizzano il lavoro di routine e completano le traduzioni.',
+  'hero.subtitle': 'Il tuo assistente di traduzione intelligente mobile, dotato di funzionalità versatili per un\'esperienza interlinguistica completa.',
   'hero.ctaButton': 'Ottieni AnyTranslator gratis',
   'hero.iosOnly': 'Attualmente su iOS — Android e altre piattaforme sono in arrivo!',
   
@@ -108,6 +108,6 @@ export const translations = {
   'footer.copyright': '© 2024 AnyTranslator. Tutti i diritti riservati.',
   
   // Meta
-  'meta.title': 'AnyTranslator - App di Traduzione Intelligente',
+  'meta.title': 'AnyTranslator - Applicazione di traduzione intelligente',
   'meta.description': 'Il tuo compagno intelligente per traduzioni istantanee e accurate in oltre 50 lingue'
 };

@@ -4,9 +4,9 @@ export const translations = {
   'nav.openApp': 'App öffnen',
   
   // Hero Section
-  'hero.title.part1': 'Der KI-Übersetzer,',
+  'hero.title.part1': 'Der KI-Übersetzer',
   'hero.title.part2': 'der für dich arbeitet.',
-  'hero.subtitle': 'Ein Ort, wo Teams alle Antworten finden, Routinearbeit automatisieren und Übersetzungen erledigen.',
+  'hero.subtitle': 'Ihr mobiler intelligenter Übersetzungsassistent, ausgestattet mit vielseitigen Funktionen für eine vollständige sprachübergreifende Erfahrung.',
   'hero.ctaButton': 'AnyTranslator kostenlos erhalten',
   'hero.iosOnly': 'Derzeit auf iOS — Android und weitere Plattformen sind auf dem Weg!',
   
