@@ -8,6 +8,7 @@ export const translations = {
   'hero.title.part2': 'yang bekerja untuk Anda.',
   'hero.subtitle': 'Satu tempat di mana tim menemukan setiap jawaban, mengotomatisasi pekerjaan rutin, dan menyelesaikan terjemahan.',
   'hero.ctaButton': 'Dapatkan AnyTranslator gratis',
+  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',

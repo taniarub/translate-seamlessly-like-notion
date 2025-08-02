@@ -8,6 +8,7 @@ export const translations = {
   'hero.title.part2': '為您而工作。',
   'hero.subtitle': '團隊找到每個答案、自動化繁瑣工作並完成翻譯的一個地方。',
   'hero.ctaButton': '免費獲取AnyTranslator',
+  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',
