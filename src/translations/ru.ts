@@ -5,7 +5,7 @@ export const translations = {
   
   // Hero Section
   'hero.title.part1': 'Any Translator',
-  'hero.title.part2': 'Ваш интеллектуальный помощник для перевода',
+  'hero.title.part2': 'Ваш AI-помощник для перевода',
   'hero.subtitle': 'Ваш мобильный интеллектуальный помощник для перевода, оснащенный универсальными функциями для полноценного межъязыкового взаимодействия.',
   'hero.ctaButton': 'Получить Any Translator бесплатно',
   'hero.iosOnly': 'Пока только для iOS. Мы работаем над версиями для Android и других платформ.',
