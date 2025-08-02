@@ -10,7 +10,6 @@ export type Language = {
 
 export const languages: Language[] = [
   { code: 'en', name: 'English (US)', nativeName: 'English', flag: '🇺🇸' },
-  { code: 'en-gb', name: 'English (GB)', nativeName: 'English', flag: '🇬🇧' },
   { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
   { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },

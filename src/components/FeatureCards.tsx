@@ -1,10 +1,17 @@
 import { Brain, Mic, Zap, Search, Image, Camera } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeatureCards = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const cards = [
     {
@@ -81,13 +88,175 @@ const FeatureCards = () => {
     }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+  const startAutoPlay = useCallback(() => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+    }
+    autoPlayRef.current = setInterval(() => {
+      if (!isPaused) {
+        if (isDesktop) {
+          setCurrentIndex((prevIndex) => {
+            if (prevIndex >= cards.length - 2) {
+              // If at the end, go to the first page
+              return 0;
+            }
+            return prevIndex + 2;
+          });
+        } else {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+        }
+      }
     }, 3000);
+  }, [cards.length, isPaused, isDesktop]);
 
-    return () => clearInterval(interval);
-  }, [cards.length]);
+  const stopAutoPlay = useCallback(() => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, [startAutoPlay, stopAutoPlay]);
+
+  // Track screen size for navigation
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Mouse event handlers
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default to avoid text selection
+    setIsDragging(true);
+    setIsPaused(true);
+    setDragStartX(e.clientX);
+    setDragOffset(0);
+    stopAutoPlay();
+  }, [stopAutoPlay]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging) return;
+    
+    e.preventDefault(); // Prevent default to avoid text selection
+    const deltaX = e.clientX - dragStartX;
+    setDragOffset(deltaX);
+  }, [isDragging, dragStartX]);
+
+  const handleMouseUp = useCallback(() => {
+    if (!isDragging) return;
+    
+    setIsDragging(false);
+    setIsPaused(false);
+    
+    // Calculate if we should change slide based on drag distance
+    const threshold = 100; // minimum drag distance to trigger slide change
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        // Swipe right - go to previous
+        if (isDesktop) {
+          setCurrentIndex((prevIndex) => {
+            if (prevIndex <= 0) {
+              // If at the beginning, go to the last page
+              return Math.max(0, cards.length - 2);
+            }
+            return Math.max(0, prevIndex - 2);
+          });
+        } else {
+          setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+        }
+      } else {
+        // Swipe left - go to next
+        if (isDesktop) {
+          setCurrentIndex((prevIndex) => {
+            if (prevIndex >= cards.length - 2) {
+              // If at the end, go to the first page
+              return 0;
+            }
+            return Math.min(cards.length - 2, prevIndex + 2);
+          });
+        } else {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+        }
+      }
+    }
+    
+    setDragOffset(0);
+    startAutoPlay();
+  }, [isDragging, dragOffset, currentIndex, cards.length, startAutoPlay, isDesktop]);
+
+  // Touch event handlers for mobile
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    setIsDragging(true);
+    setIsPaused(true);
+    setDragStartX(e.touches[0].clientX);
+    setDragOffset(0);
+    stopAutoPlay();
+  }, [stopAutoPlay]);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isDragging) return;
+    
+    e.preventDefault(); // Prevent default to avoid scrolling
+    const deltaX = e.touches[0].clientX - dragStartX;
+    setDragOffset(deltaX);
+  }, [isDragging, dragStartX]);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!isDragging) return;
+    
+    setIsDragging(false);
+    setIsPaused(false);
+    
+    // Calculate if we should change slide based on drag distance
+    const threshold = 50; // smaller threshold for mobile
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        // Swipe right - go to previous
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+      } else {
+        // Swipe left - go to next
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+      }
+    }
+    
+    setDragOffset(0);
+    startAutoPlay();
+  }, [isDragging, dragOffset, currentIndex, cards.length, startAutoPlay]);
+
+  // Add global mouse event listeners
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      if (isDragging) {
+        handleMouseUp();
+      }
+    };
+
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        // Throttle the mouse move events to improve performance
+        requestAnimationFrame(() => {
+          handleMouseMove(e as any);
+        });
+      }
+    };
+
+    document.addEventListener('mouseup', handleGlobalMouseUp);
+    document.addEventListener('mousemove', handleGlobalMouseMove);
+
+    return () => {
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+    };
+  }, [isDragging, handleMouseUp, handleMouseMove]);
 
   const getTagColorClasses = (color: string) => {
     const colors = {
@@ -131,143 +300,167 @@ const FeatureCards = () => {
         <div className="max-w-6xl mx-auto">
           {/* Desktop Carousel - 2 Cards View */}
           <div className="hidden lg:block">
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="relative">
               <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${Math.floor(currentIndex / 2) * 100}%)` }}
+                ref={carouselRef}
+                className="relative overflow-hidden rounded-xl cursor-grab active:cursor-grabbing"
+                onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
               >
-                {Array.from({ length: Math.ceil(cards.length / 2) }, (_, pageIndex) => (
-                  <div key={pageIndex} className="w-full flex-shrink-0">
-                    <div className="grid grid-cols-2 gap-6">
-                      {cards.slice(pageIndex * 2, pageIndex * 2 + 2).map((card) => {
-                        const IconComponent = card.icon;
-                        return (
-                          <div
-                            key={card.id}
-                            className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-6 min-h-[560px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)}`}
-                          >
-                            {/* Content Layout - Text on Top, Image on Bottom */}
-                            <div className="flex flex-col h-full">
-                              {/* Top - Text Content */}
-                              <div className="flex-1">
-                                <div className="flex items-center gap-3 mb-4">
-                                  <div className={`flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
-                                    <IconComponent className="h-3 w-3" />
-                                    <span>{card.tag}</span>
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ 
+                    transform: `translateX(calc(-${Math.floor(currentIndex / 2) * 100}% + ${dragOffset}px))`,
+                    transition: isDragging ? 'none' : 'transform 0.5s ease-in-out'
+                  }}
+                >
+                  {Array.from({ length: Math.ceil(cards.length / 2) }, (_, pageIndex) => (
+                    <div key={pageIndex} className="w-full flex-shrink-0">
+                      <div className="grid grid-cols-2 gap-6">
+                        {cards.slice(pageIndex * 2, pageIndex * 2 + 2).map((card) => {
+                          const IconComponent = card.icon;
+                          return (
+                            <div
+                              key={card.id}
+                              className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-6 min-h-[560px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)} ${isDragging ? 'select-none' : ''}`}
+                            >
+                              {/* Content Layout - Text on Top, Image on Bottom */}
+                              <div className="flex flex-col h-full">
+                                {/* Top - Text Content */}
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-3 mb-4">
+                                    <div className={`flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
+                                      <IconComponent className="h-3 w-3" />
+                                      <span>{card.tag}</span>
+                                    </div>
                                   </div>
+                                  
+                                  <h3 className="text-2xl font-semibold text-gray-900 mb-3 leading-tight">
+                                    {card.title}
+                                  </h3>
+                                  
+                                  <p className="text-gray-600 mb-4 leading-relaxed text-base">
+                                    {card.description}
+                                  </p>
+                                  
+                                  <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                                    {t('features.tryIt')} <span className="ml-1">→</span>
+                                  </a>
                                 </div>
                                 
-                                <h3 className="text-2xl font-semibold text-gray-900 mb-3 leading-tight">
-                                  {card.title}
-                                </h3>
-                                
-                                <p className="text-gray-600 mb-4 leading-relaxed text-base">
-                                  {card.description}
-                                </p>
-                                
-                                <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                                  {t('features.tryIt')} <span className="ml-1">→</span>
-                                </a>
-                              </div>
-                              
-                              {/* Bottom - Screenshot Center Aligned */}
-                              <div className="flex justify-center">
-                                <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-6">
-                                  <img 
-                                    src={card.image} 
-                                    alt={card.title}
-                                    className="w-[600px] h-[600px] object-contain rounded-3xl"
-                                  />
+                                {/* Bottom - Screenshot Center Aligned */}
+                                <div className="flex justify-center">
+                                  <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-6">
+                                    <img 
+                                      src={card.image} 
+                                      alt={card.title}
+                                      className="w-[600px] h-[600px] object-contain rounded-3xl"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Desktop Carousel Indicators */}
-              <div className="flex justify-center mt-4 gap-2">
-                {Array.from({ length: Math.ceil(cards.length / 2) }, (_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index * 2)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      Math.floor(currentIndex / 2) === index ? 'bg-blue-600 w-6' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
+                  ))}
+                </div>
+                
+                {/* Desktop Carousel Indicators */}
+                <div className="flex justify-center mt-4 gap-2">
+                  {Array.from({ length: Math.ceil(cards.length / 2) }, (_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentIndex(index * 2)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        Math.floor(currentIndex / 2) === index ? 'bg-blue-600 w-6' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
           {/* Mobile Carousel View */}
           <div className="lg:hidden">
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="relative">
               <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                ref={carouselRef}
+                className="relative overflow-hidden rounded-xl cursor-grab active:cursor-grabbing"
+                onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
               >
-                {cards.map((card) => {
-                  const IconComponent = card.icon;
-                  return (
-                    <div key={card.id} className="w-full flex-shrink-0">
-                      <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-4 mx-2 min-h-[420px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)}`}>
-                        {/* Content Layout - Text on Top, Image on Bottom */}
-                        <div className="flex flex-col h-full">
-                          {/* Top - Text Content */}
-                          <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className={`flex items-center gap-2 px-2 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
-                                <IconComponent className="h-3 w-3" />
-                                <span>{card.tag}</span>
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ 
+                    transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffset}px))`,
+                    transition: isDragging ? 'none' : 'transform 0.5s ease-in-out'
+                  }}
+                >
+                  {cards.map((card) => {
+                    const IconComponent = card.icon;
+                    return (
+                      <div key={card.id} className="w-full flex-shrink-0">
+                        <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-4 mx-2 min-h-[420px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)} ${isDragging ? 'select-none' : ''}`}>
+                          {/* Content Layout - Text on Top, Image on Bottom */}
+                          <div className="flex flex-col h-full">
+                            {/* Top - Text Content */}
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-3">
+                                <div className={`flex items-center gap-2 px-2 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
+                                  <IconComponent className="h-3 w-3" />
+                                  <span>{card.tag}</span>
+                                </div>
                               </div>
+                              
+                              <h3 className="text-xl font-semibold text-gray-900 mb-2 leading-tight">
+                                {card.title}
+                              </h3>
+                              
+                              <p className="text-gray-600 mb-3 leading-relaxed text-base">
+                                {card.description}
+                              </p>
+                              
+                              <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                                {t('features.tryIt')} <span className="ml-1">→</span>
+                              </a>
                             </div>
                             
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2 leading-tight">
-                              {card.title}
-                            </h3>
-                            
-                            <p className="text-gray-600 mb-3 leading-relaxed text-base">
-                              {card.description}
-                            </p>
-                            
-                            <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                              {t('features.tryIt')} <span className="ml-1">→</span>
-                            </a>
-                          </div>
-                          
-                          {/* Bottom - Screenshot Center Aligned */}
-                          <div className="flex justify-center">
-                            <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-4">
-                              <img 
-                                src={card.image} 
-                                alt={card.title}
-                                className="w-[399px] h-[399px] object-contain rounded-3xl"
-                              />
+                            {/* Bottom - Screenshot Center Aligned */}
+                            <div className="flex justify-center">
+                              <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-4">
+                                <img 
+                                  src={card.image} 
+                                  alt={card.title}
+                                  className="w-[399px] h-[399px] object-contain rounded-3xl"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              {/* Carousel Indicators */}
-              <div className="flex justify-center mt-4 gap-2">
-                {cards.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentIndex ? 'bg-blue-600 w-6' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
+                    );
+                  })}
+                </div>
+                
+                {/* Carousel Indicators */}
+                <div className="flex justify-center mt-4 gap-2">
+                  {cards.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentIndex ? 'bg-blue-600 w-6' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -277,4 +470,4 @@ const FeatureCards = () => {
   );
 };
 
-export default FeatureCards; 
+export default FeatureCards;

@@ -16,7 +16,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/Logo.jpg" 
               alt="AnyTranslator" 
-              className="h-6 w-6"
+              className="h-6 w-6 rounded-[5px]"
             />
             <span className="text-notion-base font-medium text-text-primary">
               AnyTranslator
