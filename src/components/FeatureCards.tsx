@@ -15,7 +15,7 @@ const FeatureCards = () => {
       icon: Zap,
       linkColor: "blue",
       iconGradient: "from-blue-400 to-blue-600",
-      hoverBorder: "hover:ring-1 hover:ring-blue-200"
+      image: "/lovable-uploads/文字翻譯.png"
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const FeatureCards = () => {
       icon: Brain,
       linkColor: "green",
       iconGradient: "from-green-400 to-green-600",
-      hoverBorder: "hover:ring-1 hover:ring-green-200"
+      image: "/lovable-uploads/AI對話學習.png"
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const FeatureCards = () => {
       icon: Brain,
       linkColor: "purple",
       iconGradient: "from-purple-400 to-purple-600",
-      hoverBorder: "hover:ring-1 hover:ring-purple-200"
+      image: "/lovable-uploads/Frame 26088444.png"
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ const FeatureCards = () => {
       icon: Mic,
       linkColor: "orange",
       iconGradient: "from-orange-400 to-orange-600",
-      hoverBorder: "hover:ring-1 hover:ring-orange-200"
+      image: "/lovable-uploads/語音翻譯.png"
     },
     {
       id: 5,
@@ -63,7 +63,7 @@ const FeatureCards = () => {
       icon: Image,
       linkColor: "indigo",
       iconGradient: "from-indigo-400 to-indigo-600",
-      hoverBorder: "hover:ring-1 hover:ring-indigo-200"
+      image: "/lovable-uploads/AI圖片互動.png"
     },
     {
       id: 6,
@@ -75,7 +75,7 @@ const FeatureCards = () => {
       icon: Camera,
       linkColor: "pink",
       iconGradient: "from-pink-400 to-pink-600",
-      hoverBorder: "hover:ring-1 hover:ring-pink-200"
+      image: "/lovable-uploads/照片翻譯.png"
     }
   ];
 
@@ -111,47 +111,95 @@ const FeatureCards = () => {
     return colors[color as keyof typeof colors] || colors.blue;
   };
 
+  const getBorderColorClasses = (color: string) => {
+    const colors = {
+      blue: "hover:border-blue-200",
+      green: "hover:border-green-200",
+      purple: "hover:border-purple-200",
+      orange: "hover:border-orange-200",
+      indigo: "hover:border-indigo-200",
+      pink: "hover:border-pink-200"
+    };
+    return colors[color as keyof typeof colors] || colors.blue;
+  };
+
   return (
     <section className="py-6 lg:py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Desktop Grid View */}
-          <div className="hidden lg:grid lg:grid-cols-2 gap-6">
-            {cards.map((card) => {
-              const IconComponent = card.icon;
-              return (
-                <div
-                  key={card.id}
-                  className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${card.gradient} p-6 transition-all duration-300 hover:shadow-lg ${card.hoverBorder}`}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
-                      <IconComponent className="h-3 w-3" />
-                      <span>{card.tag}</span>
+          {/* Desktop Carousel - 2 Cards View */}
+          <div className="hidden lg:block">
+            <div className="relative overflow-hidden rounded-xl">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${Math.floor(currentIndex / 2) * 100}%)` }}
+              >
+                {Array.from({ length: Math.ceil(cards.length / 2) }, (_, pageIndex) => (
+                  <div key={pageIndex} className="w-full flex-shrink-0">
+                    <div className="grid grid-cols-2 gap-6">
+                      {cards.slice(pageIndex * 2, pageIndex * 2 + 2).map((card) => {
+                        const IconComponent = card.icon;
+                        return (
+                          <div
+                            key={card.id}
+                            className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-6 min-h-[560px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)}`}
+                          >
+                            {/* Content Layout - Text on Top, Image on Bottom */}
+                            <div className="flex flex-col h-full">
+                              {/* Top - Text Content */}
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-4">
+                                  <div className={`flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
+                                    <IconComponent className="h-3 w-3" />
+                                    <span>{card.tag}</span>
+                                  </div>
+                                </div>
+                                
+                                <h3 className="text-2xl font-semibold text-gray-900 mb-3 leading-tight">
+                                  {card.title}
+                                </h3>
+                                
+                                <p className="text-gray-600 mb-4 leading-relaxed text-base">
+                                  {card.description}
+                                </p>
+                                
+                                <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                                  Try it <span className="ml-1">→</span>
+                                </a>
+                              </div>
+                              
+                              {/* Bottom - Screenshot Right Aligned */}
+                              <div className="flex justify-end">
+                                <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                                  <img 
+                                    src={card.image} 
+                                    alt={card.title}
+                                    className="w-[400px] h-[400px] object-contain rounded-3xl"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                  
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight">
-                    {card.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                    {card.description}
-                  </p>
-                  
-                  <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                    Try it <span className="ml-1">→</span>
-                  </a>
-                  
-                  {/* Icon in top right corner */}
-                  <div className="absolute top-4 right-4">
-                    <div className={`w-8 h-8 bg-gradient-to-br ${card.iconGradient} rounded-xl flex items-center justify-center`}>
-                      <IconComponent className="h-4 w-4 text-white" />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                ))}
+              </div>
+              
+              {/* Desktop Carousel Indicators */}
+              <div className="flex justify-center mt-4 gap-2">
+                {Array.from({ length: Math.ceil(cards.length / 2) }, (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index * 2)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      Math.floor(currentIndex / 2) === index ? 'bg-blue-600 w-6' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Carousel View */}
@@ -165,30 +213,40 @@ const FeatureCards = () => {
                   const IconComponent = card.icon;
                   return (
                     <div key={card.id} className="w-full flex-shrink-0">
-                      <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${card.gradient} p-4 mx-2 transition-all duration-300 hover:shadow-lg ${card.hoverBorder}`}>
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className={`flex items-center gap-2 px-2 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
-                            <IconComponent className="h-3 w-3" />
-                            <span>{card.tag}</span>
+                      <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${card.gradient} p-4 mx-2 min-h-[420px] transition-all duration-300 hover:shadow-lg border border-transparent ${getBorderColorClasses(card.tagColor)}`}>
+                        {/* Content Layout - Text on Top, Image on Bottom */}
+                        <div className="flex flex-col h-full">
+                          {/* Top - Text Content */}
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className={`flex items-center gap-2 px-2 py-1 rounded-md text-xs font-medium ${getTagColorClasses(card.tagColor)}`}>
+                                <IconComponent className="h-3 w-3" />
+                                <span>{card.tag}</span>
+                              </div>
+                            </div>
+                            
+                            <h3 className="text-xl font-semibold text-gray-900 mb-2 leading-tight">
+                              {card.title}
+                            </h3>
+                            
+                            <p className="text-gray-600 mb-3 leading-relaxed text-base">
+                              {card.description}
+                            </p>
+                            
+                            <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                              Try it <span className="ml-1">→</span>
+                            </a>
                           </div>
-                        </div>
-                        
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-                          {card.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 mb-3 leading-relaxed text-sm">
-                          {card.description}
-                        </p>
-                        
-                        <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                          Try it <span className="ml-1">→</span>
-                        </a>
-                        
-                        {/* Icon in top right corner */}
-                        <div className="absolute top-3 right-3">
-                          <div className={`w-6 h-6 bg-gradient-to-br ${card.iconGradient} rounded-lg flex items-center justify-center`}>
-                            <IconComponent className="h-3 w-3 text-white" />
+                          
+                          {/* Bottom - Screenshot Right Aligned */}
+                          <div className="flex justify-end">
+                            <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                              <img 
+                                src={card.image} 
+                                alt={card.title}
+                                className="w-[266px] h-[266px] object-contain rounded-3xl"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
