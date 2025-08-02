@@ -165,7 +165,7 @@ const FeatureCards = () => {
                                   {card.description}
                                 </p>
                                 
-                                <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                                <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
                                   {t('features.tryIt')} <span className="ml-1">→</span>
                                 </a>
                               </div>
@@ -235,7 +235,7 @@ const FeatureCards = () => {
                               {card.description}
                             </p>
                             
-                            <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
+                            <a href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
                               {t('features.tryIt')} <span className="ml-1">→</span>
                             </a>
                           </div>
