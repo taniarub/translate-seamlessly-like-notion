@@ -1,25 +1,29 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const FeatureSection = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
-      title: "Translate as You Type — Instantly",
-      description: "Whether you're messaging, emailing, or writing a caption,\nAnyTranslator translates your text on the fly into any language you need. Fast, seamless, and effortless."
+      title: t('featureSection.feature1.title'),
+      description: t('featureSection.feature1.description')
     },
     {
-      title: "Learn Languages Smarter with AI",
-      description: "AI-powered training that adapts to you.\nBuild personalized word lists, master grammar, and remember what actually matters."
+      title: t('featureSection.feature2.title'),
+      description: t('featureSection.feature2.description')
     },
     {
-      title: "Speak Any Language",
-      description: "It supports 50+ languages, including Korean, Japanese, Russian, Arabic, Turkish, and even Swahili."
+      title: t('featureSection.feature3.title'),
+      description: t('featureSection.feature3.description')
     },
     {
-      title: "Beyond Words: Smarter Translation",
-      description: "AnyTranslator handles tricky grammar, idioms, and real-life context using powerful AI."
+      title: t('featureSection.feature4.title'),
+      description: t('featureSection.feature4.description')
     }
   ];
 
   return (
-    <section className="py-6 lg:py-8">
+    <section className="py-12 lg:py-16">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-xl max-w-5xl mx-auto">
           {features.map((feature, index) => (

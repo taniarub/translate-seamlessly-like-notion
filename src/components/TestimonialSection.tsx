@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TestimonialSection = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
@@ -75,13 +77,13 @@ const TestimonialSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-8 lg:py-12 bg-gray-50">
+    <section className="py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-8">
             <h2 className="text-lg font-normal text-gray-600 mb-6">
-              💬 Customer stories
+              💬 {t('testimonials.title')}
             </h2>
           </div>
 
@@ -210,20 +212,20 @@ const TestimonialSection = () => {
           <div className="mt-16 text-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">100M+</div>
-                <div className="text-sm text-gray-600">users worldwide</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">10K+</div>
+                <div className="text-sm text-gray-600">{t('testimonials.stats.users')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">#1</div>
-                <div className="text-sm text-gray-600">AI translation (G2)</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">Top 10</div>
+                <div className="text-sm text-gray-600">{t('testimonials.stats.aiTranslation')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">50+</div>
-                <div className="text-sm text-gray-600">languages supported</div>
+                <div className="text-sm text-gray-600">{t('testimonials.stats.languages')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">1M+</div>
-                <div className="text-sm text-gray-600">community members</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">5K+</div>
+                <div className="text-sm text-gray-600">{t('testimonials.stats.community')}</div>
               </div>
             </div>
           </div>

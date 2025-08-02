@@ -1,15 +1,17 @@
 import { Brain, Mic, Zap, Search, Image, Camera } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeatureCards = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const cards = [
     {
       id: 1,
-      title: "Perfect translations every time.",
-      description: "Advanced AI understands context, idioms, and cultural nuances for natural translations.",
-      tag: "AI Translation",
+      title: t('features.aiTranslation.title'),
+      description: t('features.aiTranslation.description'),
+      tag: t('features.aiTranslation.tag'),
       tagColor: "blue",
       gradient: "from-blue-100/50 to-blue-50/30",
       icon: Zap,
@@ -19,9 +21,9 @@ const FeatureCards = () => {
     },
     {
       id: 2,
-      title: "AI Conversational Learning",
-      description: "AI learns grammar and conversation scenarios for easier learning!",
-      tag: "AI Learning",
+      title: t('features.aiLearning.title'),
+      description: t('features.aiLearning.description'),
+      tag: t('features.aiLearning.tag'),
       tagColor: "green",
       gradient: "from-green-100/50 to-green-50/30",
       icon: Brain,
@@ -31,9 +33,9 @@ const FeatureCards = () => {
     },
     {
       id: 3,
-      title: "Customized Knowledge",
-      description: "Enhance your translations with context-aware knowledge expansion that adapts to your specific domain and requirements.",
-      tag: "Customized Knowledge",
+      title: t('features.customizedKnowledge.title'),
+      description: t('features.customizedKnowledge.description'),
+      tag: t('features.customizedKnowledge.tag'),
       tagColor: "purple",
       gradient: "from-purple-100/50 to-purple-50/30",
       icon: Brain,
@@ -43,9 +45,9 @@ const FeatureCards = () => {
     },
     {
       id: 4,
-      title: "Instant Voice Translation",
-      description: "Break down language barriers instantly with live voice translation that works across all your conversations.",
-      tag: "Instant Voice Translation",
+      title: t('features.voiceTranslation.title'),
+      description: t('features.voiceTranslation.description'),
+      tag: t('features.voiceTranslation.tag'),
       tagColor: "orange",
       gradient: "from-orange-100/50 to-orange-50/30",
       icon: Mic,
@@ -55,9 +57,9 @@ const FeatureCards = () => {
     },
     {
       id: 5,
-      title: "AI Image Interaction",
-      description: "Upload images to directly chat with AI and receive answers or translations.",
-      tag: "AI Image Chat",
+      title: t('features.aiImageInteraction.title'),
+      description: t('features.aiImageInteraction.description'),
+      tag: t('features.aiImageInteraction.tag'),
       tagColor: "indigo",
       gradient: "from-indigo-100/50 to-indigo-50/30",
       icon: Image,
@@ -67,9 +69,9 @@ const FeatureCards = () => {
     },
     {
       id: 6,
-      title: "Photo Translation Tool",
-      description: "Прекрасно распознаёт картинки, фото, конспекты, контракты.",
-      tag: "Photo Translation",
+      title: t('features.photoTranslation.title'),
+      description: t('features.photoTranslation.description'),
+      tag: t('features.photoTranslation.tag'),
       tagColor: "pink",
       gradient: "from-pink-100/50 to-pink-50/30",
       icon: Camera,
@@ -124,7 +126,7 @@ const FeatureCards = () => {
   };
 
   return (
-    <section className="py-6 lg:py-8">
+    <section className="py-12 lg:py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Desktop Carousel - 2 Cards View */}
@@ -164,17 +166,17 @@ const FeatureCards = () => {
                                 </p>
                                 
                                 <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                                  Try it <span className="ml-1">→</span>
+                                  {t('features.tryIt')} <span className="ml-1">→</span>
                                 </a>
                               </div>
                               
-                              {/* Bottom - Screenshot Right Aligned */}
-                              <div className="flex justify-end">
-                                <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                              {/* Bottom - Screenshot Center Aligned */}
+                              <div className="flex justify-center">
+                                <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-6">
                                   <img 
                                     src={card.image} 
                                     alt={card.title}
-                                    className="w-[400px] h-[400px] object-contain rounded-3xl"
+                                    className="w-[600px] h-[600px] object-contain rounded-3xl"
                                   />
                                 </div>
                               </div>
@@ -234,17 +236,17 @@ const FeatureCards = () => {
                             </p>
                             
                             <a href="#" className={`inline-flex items-center font-medium transition-colors text-sm ${getLinkColorClasses(card.linkColor)}`}>
-                              Try it <span className="ml-1">→</span>
+                              {t('features.tryIt')} <span className="ml-1">→</span>
                             </a>
                           </div>
                           
-                          {/* Bottom - Screenshot Right Aligned */}
-                          <div className="flex justify-end">
-                            <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                          {/* Bottom - Screenshot Center Aligned */}
+                          <div className="flex justify-center">
+                            <div className="opacity-95 hover:opacity-100 transition-all duration-300 hover:scale-105 -mb-4">
                               <img 
                                 src={card.image} 
                                 alt={card.title}
-                                className="w-[266px] h-[266px] object-contain rounded-3xl"
+                                className="w-[399px] h-[399px] object-contain rounded-3xl"
                               />
                             </div>
                           </div>

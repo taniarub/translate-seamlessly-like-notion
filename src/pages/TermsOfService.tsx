@@ -179,20 +179,7 @@ const TermsOfService = () => {
               Any disputes arising from these Terms or the Service shall be resolved through appropriate legal channels in accordance with applicable jurisdiction.
             </p>
 
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-gray-200 pb-2">12. Contact Information</h2>
-            
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <p className="mb-4 font-semibold text-gray-900">
-                If you have any questions about these Terms of Service, please contact us:
-              </p>
-              <div className="space-y-2 text-gray-700">
-                <p><strong>Company:</strong> AnyTranslator Inc.</p>
-                <p><strong>Email:</strong> legal@anytranslator.com</p>
-                <p><strong>Support:</strong> support@anytranslator.com</p>
-                <p><strong>Website:</strong> www.anytranslator.com</p>
-                <p><strong>App Store:</strong> Available on iOS App Store and Google Play Store</p>
-              </div>
-            </div>
+
 
             <div className="text-center py-8 border-t border-gray-200">
               <p className="text-sm text-gray-500">

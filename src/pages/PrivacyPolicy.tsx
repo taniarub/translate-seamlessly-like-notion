@@ -254,42 +254,7 @@ const PrivacyPolicy = () => {
               <li>Maintain previous versions for reference</li>
             </ul>
 
-            <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-gray-200 pb-2">11. Contact Information</h2>
-            
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-semibold text-blue-900 mb-4">Privacy Inquiries</h3>
-              <p className="mb-4 text-blue-800">
-                If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
-              </p>
-              <div className="space-y-2 text-blue-700">
-                <p><strong>Privacy Team:</strong> privacy@anytranslator.com</p>
-                <p><strong>Data Protection Officer:</strong> dpo@anytranslator.com</p>
-                <p><strong>General Support:</strong> support@anytranslator.com</p>
-                <p><strong>Legal Department:</strong> legal@anytranslator.com</p>
-                <p><strong>Phone:</strong> +1-800-TRANSLATE (for urgent privacy matters)</p>
-              </div>
-            </div>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Mailing Address</h3>
-              <div className="text-gray-700">
-                <p>AnyTranslator Inc.</p>
-                <p>Attn: Privacy Department</p>
-                <p>[Company Address]</p>
-                <p>[City, State, ZIP Code]</p>
-                <p>[Country]</p>
-              </div>
-            </div>
-
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-semibold text-green-900 mb-4">Response Times</h3>
-              <div className="space-y-2 text-green-800">
-                <p><strong>General Inquiries:</strong> We respond within 48 hours</p>
-                <p><strong>Data Requests:</strong> Fulfilled within 30 days (or as required by law)</p>
-                <p><strong>Urgent Privacy Matters:</strong> Immediate response during business hours</p>
-                <p><strong>GDPR Requests:</strong> Responded to within 1 month</p>
-              </div>
-            </div>
 
             <div className="text-center py-8 border-t border-gray-200">
               <p className="text-sm text-gray-500 mb-2">
