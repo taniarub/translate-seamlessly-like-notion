@@ -25,9 +25,9 @@ export const translations = {
   'features.aiLearning.description': 'Создавайте собственные списки слов и практикуйте ситуационные диалоги. Ваш личный языковой тренер помогает естественно усваивать грамматику и идиомы.',
   'features.aiLearning.tag': 'ИИ Обучение',
   
-  'features.customizedKnowledge.title': 'Мгновенный перевод с клавиатуры',
+  'features.customizedKnowledge.title': 'Мгновенный перевод клавиатуры',
   'features.customizedKnowledge.description': 'Переводите по мере ввода без переключения интерфейсов. Безупречно работает в WhatsApp, Instagram, Messenger, Telegram и других приложениях.',
-  'features.customizedKnowledge.tag': 'Перевод с клавиатуры',
+  'features.customizedKnowledge.tag': 'Перевод клавиатуры',
   
   'features.voiceTranslation.title': 'Перевод голоса в реальном времени',
   'features.voiceTranslation.description': 'Живая транскрипция и двуязычные субтитры для встреч, экскурсий и заказа еды, устраняя все языковые препятствия.',
@@ -50,7 +50,7 @@ export const translations = {
   
   // Testimonials
   'testimonials.title': 'Что говорят наши пользователи',
-  'testimonials.user1.text': 'Any Translator революционизировал мое общение с международными клиентами. Функция перевода с клавиатуры работает безупречно во всех моих мессенджерах!',
+  'testimonials.user1.text': 'Any Translator революционизировал мое общение с международными клиентами. Функция перевода клавиатуры работает безупречно во всех моих мессенджерах!',
   'testimonials.user1.name': 'Сара Чен',
   'testimonials.user1.title': 'Бизнес-консультант',
   
@@ -63,7 +63,7 @@ export const translations = {
   'testimonials.user3.title': 'Тревел-блогер',
   
   // Feature Section  
-  'featureSection.feature1.title': 'Мгновенный перевод с клавиатуры',
+  'featureSection.feature1.title': 'Мгновенный перевод клавиатуры',
   'featureSection.feature1.description': 'Переводите по мере ввода без переключения интерфейсов. Безупречно работает в WhatsApp, Instagram, Messenger, Telegram и других приложениях.',
   
   'featureSection.feature2.title': 'Интерактивное обучение с ИИ',
@@ -77,7 +77,7 @@ export const translations = {
 
   // Download Section
   'download.badge': 'Бесплатно и эффективно',
-  'download.title.part1': 'Готовы сломать',
+  'download.title.part1': 'Готовы преодолеть',
   'download.title.part2': 'языковые барьеры?',
   'download.description': 'Скачайте сейчас и наслаждайтесь полным доступом бесплатно.',
   'download.title': 'Скачать Any Translator',
