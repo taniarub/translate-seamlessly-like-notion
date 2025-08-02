@@ -17,7 +17,7 @@ const FeatureCards = () => {
       icon: Zap,
       linkColor: "blue",
       iconGradient: "from-blue-400 to-blue-600",
-      image: "/lovable-uploads/鍵盤翻譯.png"
+      image: "/lovable-uploads/文字翻譯.png"
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ const FeatureCards = () => {
       icon: Brain,
       linkColor: "purple",
       iconGradient: "from-purple-400 to-purple-600",
-      image: "/lovable-uploads/Frame 26088444.png"
+      image: "/lovable-uploads/鍵盤翻譯.png"
     },
     {
       id: 4,
