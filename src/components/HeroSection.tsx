@@ -37,7 +37,7 @@ const HeroSection = () => {
                     className="h-14 w-auto"
                   />
                 </a>
-                <p className="text-sm text-gray-600 mt-2 text-center lg:text-left">
+                <p className="text-sm text-gray-600 mt-4 text-center lg:text-left">
                   {t('hero.iosOnly')}
                 </p>
               </div>
