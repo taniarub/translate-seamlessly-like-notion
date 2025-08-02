@@ -75,11 +75,11 @@ const TestimonialSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-16 lg:py-20 bg-gray-50">
+    <section className="py-8 lg:py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="mb-16">
+          <div className="mb-8">
             <h2 className="text-lg font-normal text-gray-600 mb-6">
               💬 Customer stories
             </h2>

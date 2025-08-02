@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-12 lg:py-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -16,17 +16,20 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-text-secondary mb-12 max-w-3xl lg:max-w-none mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-text-secondary mb-8 max-w-3xl lg:max-w-none mx-auto leading-relaxed">
               One place where teams find every answer, automate the busywork, and get translations done.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-              <Button variant="primary" size="lg" className="font-medium px-8 py-3 text-base">
-                Get AnyTranslator free
-              </Button>
-              <Button variant="secondary" size="lg" className="font-medium px-8 py-3 text-base">
-                Request a demo
-              </Button>
+              <a 
+                href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="primary" size="lg" className="font-medium px-8 py-3 text-base">
+                  Get AnyTranslator free
+                </Button>
+              </a>
             </div>
           </div>
           

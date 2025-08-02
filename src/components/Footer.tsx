@@ -5,7 +5,12 @@ const Footer = () => {
     <footer className="border-t border-border-light py-lg">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <div className="flex items-center gap-3">
+          <a 
+            href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
             <img 
               src="/lovable-uploads/Logo.jpg" 
               alt="AnyTranslator" 
@@ -14,13 +19,13 @@ const Footer = () => {
             <span className="text-notion-base font-medium text-text-primary">
               AnyTranslator
             </span>
-          </div>
+          </a>
           
           <div className="flex items-center gap-6">
-            <a href="#" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
+            <a href="/terms-of-service" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
+            <a href="/privacy-policy" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
               Privacy Policy
             </a>
           </div>

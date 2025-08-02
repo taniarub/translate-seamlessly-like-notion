@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Download, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const DownloadSection = () => {
   return (
-    <section className="py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-8 lg:py-12 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
@@ -26,10 +25,18 @@ const DownloadSection = () => {
           </div>
           
           <div className="flex justify-center items-center">
-            <Button variant="primary" size="lg" className="font-medium px-8 py-4 text-lg">
-              <Download className="h-5 w-5 mr-2" />
-              Get the App
-            </Button>
+            <a 
+              href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="/lovable-uploads/Download_on_the_App_Store_Badge.svg.png" 
+                alt="Download Any Translator on the App Store" 
+                className="h-14 w-auto"
+              />
+            </a>
           </div>
         </div>
       </div>
