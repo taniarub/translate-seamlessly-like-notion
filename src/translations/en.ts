@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': 'Your Intelligent Translation Assistant',
   'hero.subtitle': 'Your on-the-go intelligent translation assistant, packed with versatile features for a full-spectrum cross-language experience.',
   'hero.ctaButton': 'Get Any Translator free',
-  'hero.iosOnly': 'Currently iOS only. We\'re working on Android and other platforms.',
+  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
   
   // Description Section
   'description.title.part1': 'Any Translator',
