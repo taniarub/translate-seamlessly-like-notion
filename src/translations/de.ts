@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': 'der für dich arbeitet.',
   'hero.subtitle': 'Ein Ort, wo Teams alle Antworten finden, Routinearbeit automatisieren und Übersetzungen erledigen.',
   'hero.ctaButton': 'AnyTranslator kostenlos erhalten',
-  'hero.iosOnly': 'Derzeit nur iOS. Wir arbeiten an Android und anderen Plattformen.',
+  'hero.iosOnly': 'Derzeit auf iOS — Android und weitere Plattformen sind auf dem Weg!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',

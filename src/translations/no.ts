@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': 'som jobber for deg.',
   'hero.subtitle': 'Ét sted hvor team finner alle svar, automatiserer rutinearbeid og får oversettelser ferdig.',
   'hero.ctaButton': 'Få AnyTranslator gratis',
-  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
+  'hero.iosOnly': 'For tiden på iOS — Android og flere plattformer kommer snart!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',

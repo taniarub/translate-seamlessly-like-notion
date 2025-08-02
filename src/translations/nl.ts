@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': 'die voor jou werkt.',
   'hero.subtitle': 'Één plek waar teams alle antwoorden vinden, routinewerk automatiseren en vertalingen afkrijgen.',
   'hero.ctaButton': 'AnyTranslator gratis krijgen',
-  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
+  'hero.iosOnly': 'Momenteel op iOS — Android en meer platforms komen eraan!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',

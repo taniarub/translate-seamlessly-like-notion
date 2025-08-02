@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': 'joka toimii sinulle.',
   'hero.subtitle': 'Yksi paikka, jossa tiimit löytävät kaikki vastaukset, automatisoivat rutiinityöt ja saavat käännökset valmiiksi.',
   'hero.ctaButton': 'Hanki AnyTranslator ilmaiseksi',
-  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
+  'hero.iosOnly': 'Tällä hetkellä iOS:ssä — Android ja muut alustat ovat tulossa!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',

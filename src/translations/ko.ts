@@ -8,7 +8,7 @@ export const translations = {
   'hero.title.part2': '당신을 위해 작동합니다.',
   'hero.subtitle': '팀이 모든 답을 찾고, 일상 업무를 자동화하며, 번역을 완료하는 하나의 장소.',
   'hero.ctaButton': 'AnyTranslator 무료로 받기',
-  'hero.iosOnly': 'Currently on iOS — Android and more platforms are on the way!',
+  'hero.iosOnly': '현재 iOS에서만 이용 가능 — Android 및 기타 플랫폼이 곧 출시됩니다!',
   
   // Description Section
   'description.title.part1': 'AnyTranslator',
