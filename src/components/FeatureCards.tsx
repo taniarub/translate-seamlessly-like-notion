@@ -17,7 +17,7 @@ const FeatureCards = () => {
       icon: Zap,
       linkColor: "blue",
       iconGradient: "from-blue-400 to-blue-600",
-      image: "/lovable-uploads/文字翻譯.png"
+      image: "/lovable-uploads/鍵盤翻譯.png"
     },
     {
       id: 2,
