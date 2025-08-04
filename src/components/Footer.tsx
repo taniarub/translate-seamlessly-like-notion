@@ -1,11 +1,10 @@
-import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
   return (
     <footer className="border-t border-border-light py-lg">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-center">
         <div className="flex items-center gap-8">
           <a 
             href="https://apps.apple.com/by/app/any-translator-ai-translate/id6738693321"
@@ -31,11 +30,6 @@ const Footer = () => {
               {t('footer.privacy')}
             </a>
           </div>
-        </div>
-        
-        <div className="flex items-center gap-1 text-text-secondary hover:text-text-primary transition-colors cursor-pointer">
-          <span className="text-notion-sm">{t('nav.language')}</span>
-          <ChevronDown className="h-4 w-4" />
         </div>
       </div>
     </footer>
