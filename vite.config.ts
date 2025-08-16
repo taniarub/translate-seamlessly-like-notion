@@ -24,8 +24,28 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: "./index.html",
         client: "./src/entry-client.tsx"
+      },
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-navigation-menu',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast'
+          ],
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          icons: ['lucide-react'],
+          helmet: ['react-helmet-async']
+        }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000,
+    target: 'es2015'
   },
   ssr: {
     noExternal: [

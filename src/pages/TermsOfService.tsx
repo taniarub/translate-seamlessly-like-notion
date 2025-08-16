@@ -1,6 +1,26 @@
+import SEO from "@/components/SEO";
+import JsonLd, { createBreadcrumbSchema } from "@/components/JsonLd";
+
 const TermsOfService = () => {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://anytranslator.app/" },
+    { name: "Terms of Service", url: "https://anytranslator.app/terms-of-service" }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Terms of Service"
+        description="Terms of Service for AnyTranslator - AI-powered translation app. Read our terms and conditions for using our translation services."
+        keywords="terms of service, terms and conditions, legal, AnyTranslator, translation app"
+        url="/terms-of-service"
+        type="article"
+        publishedTime="2025-01-15T00:00:00Z"
+        modifiedTime="2025-01-15T00:00:00Z"
+      />
+      
+      <JsonLd data={createBreadcrumbSchema(breadcrumbItems)} />
+      
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl font-bold text-gray-900 mb-12 text-center">Terms of Service</h1>

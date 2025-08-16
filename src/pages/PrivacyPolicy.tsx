@@ -1,6 +1,26 @@
+import SEO from "@/components/SEO";
+import JsonLd, { createBreadcrumbSchema } from "@/components/JsonLd";
+
 const PrivacyPolicy = () => {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://anytranslator.app/" },
+    { name: "Privacy Policy", url: "https://anytranslator.app/privacy-policy" }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Privacy Policy"
+        description="Privacy Policy for AnyTranslator - Learn how we protect your data and privacy while using our AI-powered translation services."
+        keywords="privacy policy, data protection, privacy, AnyTranslator, translation app, GDPR, security"
+        url="/privacy-policy"
+        type="article"
+        publishedTime="2025-01-15T00:00:00Z"
+        modifiedTime="2025-01-15T00:00:00Z"
+      />
+      
+      <JsonLd data={createBreadcrumbSchema(breadcrumbItems)} />
+      
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl font-bold text-gray-900 mb-12 text-center">Privacy Policy</h1>
