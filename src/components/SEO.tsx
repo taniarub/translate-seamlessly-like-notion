@@ -35,7 +35,7 @@ const SEO = ({
   const pageDescription = description || defaultDescription;
   const pageKeywords = keywords || defaultKeywords;
   const pageUrl = url ? `https://anytranslator.app${url}` : 'https://anytranslator.app/';
-  const canonicalUrl = pageUrl + (currentLanguage !== 'en' ? `?lang=${currentLanguage}` : '');
+  const canonicalUrl = pageUrl + (currentLanguage.code !== 'en' ? `?lang=${currentLanguage.code}` : '');
 
   return (
     <>
@@ -48,8 +48,8 @@ const SEO = ({
         <meta name="robots" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
         
         {/* Language and Locale */}
-        <html lang={currentLanguage} />
-        <meta name="language" content={currentLanguage} />
+        <html lang={currentLanguage.code} />
+        <meta name="language" content={currentLanguage.code} />
         
         {/* Canonical URL */}
         <link rel="canonical" href={canonicalUrl} />
@@ -61,7 +61,7 @@ const SEO = ({
         <meta property="og:image" content={image} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content={siteTitle} />
-        <meta property="og:locale" content={currentLanguage === 'en' ? 'en_US' : `${currentLanguage}_${currentLanguage.toUpperCase()}`} />
+        <meta property="og:locale" content={currentLanguage.code === 'en' ? 'en_US' : `${currentLanguage.code.replace('-', '_')}_${currentLanguage.code.replace('-', '_').toUpperCase()}`} />
         
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
