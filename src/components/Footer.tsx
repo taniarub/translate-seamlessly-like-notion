@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -23,12 +24,12 @@ const Footer = () => {
           </a>
           
           <div className="flex items-center gap-6">
-            <a href="/terms-of-service" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
+            <Link to="/terms-of-service" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
               {t('footer.terms')}
-            </a>
-            <a href="/privacy-policy" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
+            </Link>
+            <Link to="/privacy-policy" className="text-notion-sm text-text-muted hover:text-text-secondary transition-colors">
               {t('footer.privacy')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
