@@ -53,6 +53,15 @@ type LanguageProviderProps = {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
+    // First, check URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang) {
+      const found = languages.find(lang => lang.code === urlLang);
+      if (found) return found;
+    }
+    
+    // Then check saved language
     const savedLanguage = localStorage.getItem('selectedLanguage');
     if (savedLanguage) {
       const found = languages.find(lang => lang.code === savedLanguage);
@@ -73,6 +82,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     setCurrentLanguage(language);
     localStorage.setItem('selectedLanguage', language.code);
     document.documentElement.lang = language.code;
+    
+    // Update URL parameter
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', language.code);
+    window.history.replaceState({}, '', url.toString());
   };
 
   const t = (key: string): string => {
@@ -83,6 +97,29 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     document.documentElement.lang = currentLanguage.code;
   }, [currentLanguage]);
+
+  // Listen for URL changes and update language accordingly
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      if (urlLang && urlLang !== currentLanguage.code) {
+        const found = languages.find(lang => lang.code === urlLang);
+        if (found) {
+          setCurrentLanguage(found);
+          localStorage.setItem('selectedLanguage', found.code);
+          document.documentElement.lang = found.code;
+        }
+      }
+    };
+
+    // Listen for popstate events (back/forward navigation)
+    window.addEventListener('popstate', handleUrlChange);
+    
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+    };
+  }, [currentLanguage.code]);
 
   return (
     <LanguageContext.Provider value={{ currentLanguage, setLanguage, t, languages }}>
