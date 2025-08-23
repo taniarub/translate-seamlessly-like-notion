@@ -27,7 +27,7 @@ const Navigation = () => {
             alt="AnyTranslator" 
             className="h-8 w-8 rounded-[5px]"
           />
-          <span className={`text-notion-xl font-semibold text-text-primary ${isMobile ? 'hidden sm:inline' : ''}`}>
+          <span className="text-notion-xl font-semibold text-text-primary">
             AnyTranslator
           </span>
         </a>
